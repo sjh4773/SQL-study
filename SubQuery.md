@@ -12,16 +12,16 @@
           (2 + 3 + 1 + 1 + 1 + 2) / 6 와 같은 원하지 않는 결과값이 나올 수 있다.
             
             
-            SELECT daily_states.week
-                 , AVG(daily_stats.incidents_daily)
-            FROM (
-                   SELECT week
-                        , date
-                        , COUNT(incident_id) AS incidents_daily
-                   FROM crimes
-                   GROUP BY week, date
-                 ) daily_stats                                   # 서브쿼리를 daily_stats라는 table로 만듬
-            GROUP BY daily_stats.week
+                    SELECT daily_states.week
+                         , AVG(daily_stats.incidents_daily)
+                    FROM (
+                           SELECT week
+                                , date
+                                , COUNT(incident_id) AS incidents_daily
+                           FROM crimes
+                           GROUP BY week, date
+                         ) daily_stats                                   # 서브쿼리를 daily_stats라는 table로 만듬
+                    GROUP BY daily_stats.week
 
 - 서브쿼리의 결과물
     - 이 table을 daily_stats로 지칭
