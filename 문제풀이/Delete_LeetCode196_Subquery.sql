@@ -93,7 +93,7 @@ FROM Person p1
 WHERE p1.Id > p2.Id
 
 
-
+/*
 쿼리는 p1.Id 가 p2.Id 보다 큰 경우,
 그러니까 같은 이메일을 가지지만 Id가 다른 데이터보다 큰 로우들을 찾아 삭제합니다.
 
@@ -114,3 +114,4 @@ p1.Id    p1.Email                          p2.Id    p2.Email
 3            john@example.com   1            john@example.com 
 
 DELETE는 p1을 기준으로 하고 있기 때문에 Person 테이블에서 Id가 3번인 데이터를 찾아 지웁니다.
+*/
